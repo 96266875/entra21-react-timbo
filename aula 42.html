@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Erros Costumizados</title>
+</head>
+<body>
+    <script>
+        /*1-Crie uma função somar(n1, n2) que some dois números caso o resultado seja par a função deve lançar um erro OddNumberError que
+        tem a mensagem "O número é ímpar". O script deve chamar a função e mostrar o resultado ou o erro. Após a execução da função
+        deve ser mostrado uma mensagem "Finalizando o programa...".  */
+
+        class OddNumberError extends Error {
+            constructor(message) {
+                super(message);
+                this.name = "OddNumberError"
+            }
+        }
+        function somar(n1,n2) {
+            const resultado = n1 + n2;
+
+            if 
+
+
+       /* 2-Crie uma função dobrar(numero) que dobre o valor de um número. Se o parâmetro recebido não for um número a função deve lançar
+        um TypeError com a mensagem "O valor deve ser numérico". O script deve chamar a função e mostrar o resultado ou o erro. Após a execução da função
+        deve ser mostrado uma mensagem "Finalizando o programa...". */
+
+        function dobrar(numero){
+            if (isNaN(numero)) {
+                throw new TypeError("O valor deve ser numérico");
+            }
+            return numero * 2;
+        }
+
+        try {
+            const numero = 2;
+
+            const resultado = dobrar(numero)
+            console.log(`O dobro de ${numero} ${resultado}`)
+        } catch (error) {
+            console.log("Finalizando Programa")
+            
+        }
+
+        /*3) Crie uma função validaUsuario(usuario) que recebe um usuário e retorna true se ele for um usuário válido
+        ou false se ele for inválido.
+        O usuário possui as seguintes propriedades:
+           * nome
+           * email
+           * salario
+           
+           Essa função deve fazer as seguintes verificações:
+           Se o nome for menor que 4 caracteres retornar um NameLengthError com a mensagem "O nome deve ter no mínimo 4 caracteres"
+           Se o email for inválido (não tiver @) retornar um EmailError com a mensagem "O email precisa ser válido"
+               * Desafio: use uma RegExp para fazer a validação.
+           Se o salário for menor que 465 retornar um WageError com a mensagem "O salário precisa ser no mínimo R$ 465,00"
+           O script deve chamar a função e mostrar o resultado ou o erro. Após a execução da função
+            deve ser mostrado uma mensagem "Finalizando o programa...".
+        */
+        class NameLengthError extends Error{
+            constructor(message){
+                super(message);
+                thsi.name = "NameLengthError"
+            }
+        }
+        function validaUsuario(usuario) {
+            if (usuario.nome.lengh < 4) {
+           throw new NameLengthError("O nome deve ter no minimo 4 caracteres")     
+
+            }
+
+            const regExp = 
+
+            if (!regExp.test(usuario.email))
+            throw new EmaillError("O email precisasetr válido")
+            
+        }
+
+        if (usuario.salario < 465){
+            throw new WageError("O salario precisaser no minimo R$465.00")
+        }
+
+        return true;
+
+        }
+
+        try{
+            const usuario = {
+                nome: "Pedro",
+                email: "pedro@gmail.com"
+                salario: 1000
+            }
+
+            validaUsuario(usuario);
+            console.log("O usuario é ivalido")
+        }
+
+    </script>
+    
+</body>
+</html>
